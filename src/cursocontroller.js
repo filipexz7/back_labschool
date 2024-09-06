@@ -3,15 +3,13 @@ const cursoServices = require('./cursoServices');
 const { json } = require('body-parser');
 const curosservice = requiere('service/cursoservice')
 
-const cursoServices = require('./cursoServices'); // Certifique-se de que o caminho está correto
+const cursoServices = require('./cursoServices'); 
 
 module.exports = {
     finDATURMAS: async (request, response) => {
         let json = { erro: '', resultado: [] };
         try {
-            // Adicione a lógica para encontrar turmas aqui
-            // Exemplo:
-            // json.resultado = await cursoServices.findTurmas();
+            
         } catch (error) {
             json.erro = 'Erro ao buscar turmas';
         }

@@ -29,17 +29,27 @@ findCursoByid: (id) => {
 module.exports = {
 
 },
+ updateCurso = (id, nome, quantidade) => {
+    return new Promise((resolve, reject) => {
+        // Corrigir a consulta SQL e a sintaxe da função
+        const query = 'UPDATE curso SET nome = ?, quantidade = ? WHERE id = ?';
 
-uptadeCurso: (id,nome, quantidade) => {
-return new Promise((resolve, reject) => {
-    database.query('UPTADE curso set from * "$(nome)", quantidade"$(quantidade"where id = $(id)',(error,result)) => {
-        reject(error)
+        // Passar os parâmetros de forma segura para evitar SQL Injection
+        database.query(query, [nome, quantidade, id], (error, result) => {
+            if (error) {
+                return reject(error);
+            }
+            resolve(result);
+        });
+    });
+};
+
         return
-    }
-    resolve(result)
-}
 
-}
+    resolve(result)
+
+
+
 
 deleteCurso: (id) => {
     return Promise((resolve,reject) => {

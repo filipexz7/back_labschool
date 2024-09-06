@@ -13,10 +13,10 @@ labschool: process.env .BD_LABSCHOOL
  conenection.conect(error=>{
 
     if(error)throw error
-    console.log('connection to database $[process.env.DB_NAME}')
+    console.log('connection to database $[process.env.DB_labschol}')    
 
     
- });
+ });  
 
  module.exports = connection
  
